@@ -1,0 +1,13 @@
+executable("websocket_client") {
+    sources = [
+        "WebSocketClient.cpp",
+        "main.cpp",
+    ]
+    deps = [ "//third_party/websocketpp" ]
+    configs += [ "//build/config/compiler:default" ]
+    if (is_debug) {
+        configs += [ "//build/config/compiler:debug" ]
+    } else {
+        configs += [ "//build/config/compiler:release" ]
+    }
+}
